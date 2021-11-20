@@ -1,0 +1,25 @@
+# Maintainer: Youssef Wadie <youssefwadie14@gmail.com>
+
+pkgname=aspell-ar
+pkgver=1.2
+pkgrel=1
+pkgdesc="Arabic dictionary for aspell"
+arch=('any')
+url="http://aspell.net/"
+license=('GPL2')
+depends=('aspell')
+source=("https://ftp.gnu.org/gnu/aspell/dict/ar/aspell6-ar-$pkgver-0.tar.bz2")
+sha512sums=('7f645dab6e27da404d599f40da2baf469293105cbaf440bf9abf9268423b36e0faa11d1afcf5c32a8e1d93eadad356af6486a960c7bca97777948c844108f4bc')
+
+build() {
+  cd "$srcdir/aspell6-ar-$pkgver-0"
+  ./configure
+  make
+}
+
+package() {
+  cd "$srcdir/aspell6-ar-$pkgver-0"
+  make DESTDIR="$pkgdir" install
+
+  install -D -m644 Copyright "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
