@@ -1,0 +1,30 @@
+# Maintainer : Youssef Wadie <youssefwadie14@gmail.com>
+pkgname=micromamba
+pkgver=0.18.0
+pkgrel=1
+pkgdesc='A tiny version of the mamba.'
+arch=('x86_64')
+url='https://github.com/mamba-org/mamba'
+license=('BSD')
+source=("${pkgname}-${pkgver}.tar.bz2::https://api.anaconda.org/download/conda-forge/${pkgname}/${pkgver}/linux-64/${pkgname}-${pkgver}-0.tar.bz2")
+depends=('glibc')
+provides=("${pkgname}")
+conflicts=("${pkgname}-bin")
+sha256sums=('265b6884144e41dc36e900012f9d94b81ca6b8da8ca4aa41973ff157b10a2bb7')
+
+check() {
+	export PREFIX="${srcdir}"
+	export PATH="$PREFIX/bin:$PATH"
+
+	# Execute the hook
+	bash info/test/run_test.sh
+}
+
+package() {
+    # Installing the binary
+	install -Dm775 bin/${pkgname} "${pkgdir}/usr/bin/${pkgname}"
+
+	# Installing license
+	install -Dm644 info/licenses/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+
