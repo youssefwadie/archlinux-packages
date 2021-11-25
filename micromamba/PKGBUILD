@@ -1,6 +1,6 @@
 # Maintainer : Youssef Wadie <youssefwadie14@gmail.com>
 pkgname=micromamba
-pkgver=0.18.0
+pkgver=0.18.1
 pkgrel=1
 pkgdesc='A tiny version of the mamba.'
 arch=('x86_64')
@@ -10,7 +10,7 @@ source=("${pkgname}-${pkgver}.tar.bz2::https://api.anaconda.org/download/conda-f
 depends=('glibc')
 provides=("${pkgname}")
 conflicts=("${pkgname}-bin")
-sha256sums=('265b6884144e41dc36e900012f9d94b81ca6b8da8ca4aa41973ff157b10a2bb7')
+sha256sums=('4ae846cc7048a43d69be41d426a69677b54b791746436f5f9445c2f39dba3e35')
 
 check() {
 	export PREFIX="${srcdir}"
