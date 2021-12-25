@@ -5,9 +5,13 @@ post_install() {
   "
 }
 
+post_upgrade() {
+	post_install $1
+}
 post_remove() {
   echo "
-    >>> Remember to remove plugins from your ~/.vimrc or ~/.config/nvim/init.vim file
+    >>> Remember to remove plugins from your ~/.vimrc or
+    >>> ~/.config/nvim/init.vim file
     >>> and your plugin directory!
   "
 }
