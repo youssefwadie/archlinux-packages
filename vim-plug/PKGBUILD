@@ -17,7 +17,7 @@ source=("https://github.com/junegunn/vim-plug/archive/${pkgver}.tar.gz"
 
 sha256sums=('befb0324a2f323d9c3b6c83d3dffd0ebde783f44fb52a0247d6cfc98cb4ee41f'
            '3d31a3e6890191b02e9533f6095b952252299796b8743828bc3afe4c2010ef8e'
-           '42080485c979b081091a4095458d2c8f5d16babff34d26f5b7ba14c6b8c82fcb')
+           '420d33d211576a8fdcd5597548c657129c2ae58f71750ca7dc4fcbd9a45b9f31')
 
 package() {
   install="${pkgname}.install"
