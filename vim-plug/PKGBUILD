@@ -12,12 +12,16 @@ conflicts=('vim-plug-git')
 provides=('vim-plug')
 
 source=("https://github.com/junegunn/vim-plug/archive/${pkgver}.tar.gz"
-	'https://raw.githubusercontent.com/youssefwadie/archlinux-packages/master/vim-plug/plug.vimrc.samle')
+	"https://raw.githubusercontent.com/youssefwadie/archlinux-packages/master/vim-plug/plug.vimrc.samle"
+	"https://raw.githubusercontent.com/youssefwadie/archlinux-packages/master/vim-plug/vim-plug.install")
+
 sha256sums=('befb0324a2f323d9c3b6c83d3dffd0ebde783f44fb52a0247d6cfc98cb4ee41f'
-           '3d31a3e6890191b02e9533f6095b952252299796b8743828bc3afe4c2010ef8e')
+           '3d31a3e6890191b02e9533f6095b952252299796b8743828bc3afe4c2010ef8e'
+           '42080485c979b081091a4095458d2c8f5d16babff34d26f5b7ba14c6b8c82fcb')
 
 package() {
-  install -Dm 644 ${pkgname}-${pkgver}/plug.vim ${pkgdir}/usr/share/vim/vimfiles/autoload/plug.vim
-  install -Dm 644 ${pkgname}-${pkgver}/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE  
-  install -Dm 644 plug.vimrc.samle ${pkgdir}/usr/share/vim-plug/vimrc.sample
+  install="${pkgname}.install"
+  install -Dm 644 "${pkgname}-${pkgver}/plug.vim" "${pkgdir}/usr/share/vim/vimfiles/autoload/plug.vim"
+  install -Dm 644 "${pkgname}-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm 644 "plug.vimrc.samle" "${pkgdir}/usr/share/vim-plug/vimrc.sample"
 }
