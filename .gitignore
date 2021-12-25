@@ -1,0 +1,7 @@
+# Package directories
+src/
+pkg/
+
+# Archives
+*.tar.gz
+*.pkg.tar.zst
