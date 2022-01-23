@@ -1,7 +1,7 @@
 # Maintainer: Youssef Wadie <youssefwadie14@gmail.com>
 
 pkgname=vim-plug
-pkgver=0.10.0
+pkgver=0.11.0
 pkgrel=1
 pkgdesc='A minimalist Vim plugin manager'
 arch=('any')
@@ -15,7 +15,7 @@ source=("https://github.com/junegunn/vim-plug/archive/${pkgver}.tar.gz"
 	'https://raw.githubusercontent.com/youssefwadie/archlinux-packages/master/vim-plug/plug.vimrc.samle'
 	'https://raw.githubusercontent.com/youssefwadie/archlinux-packages/master/vim-plug/vim-plug.install')
 
-sha256sums=('befb0324a2f323d9c3b6c83d3dffd0ebde783f44fb52a0247d6cfc98cb4ee41f'
+sha256sums=('b313ac61f9deffca9e6cb2dabd2cc13716d5fe8dafaab5e5c97dc2820fd50dbd'
            '3d31a3e6890191b02e9533f6095b952252299796b8743828bc3afe4c2010ef8e'
            '420d33d211576a8fdcd5597548c657129c2ae58f71750ca7dc4fcbd9a45b9f31')
 
