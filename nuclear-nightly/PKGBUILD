@@ -10,10 +10,10 @@ url='https://nuclear.js.org/'
 license=('AGPL')
 depends=('libnotify' 'libappindicator-gtk3' 'libxtst' 'nss')
 source=("https://github.com/nukeop/nuclear/releases/download/${_channel}/nuclear-${_channel}.deb"
-	'nuclear.desktop')
+		'https://raw.githubusercontent.com/youssefwadie/archlinux-packages/master/nuclear-nightly/nuclear.desktop')
 conflicts=("${_name}-bin" "${_name}-git")
 sha256sums=('8a3266f945a538f918f4ccd9ad89baf8ede25010ea7f402ea7d8f7093374847b'
-            'SKIP')
+            'abe643feaf60ef0ab9c807c35cdca266228ec80aa0e22b2e29a075bbc96483d2')
 package() {
 	tar xfv data.tar.xz
 	cp -r "${srcdir}/opt" "${pkgdir}/"
