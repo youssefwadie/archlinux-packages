@@ -5,3 +5,5 @@ pkg/
 # Archives
 *.tar.gz
 *.pkg.tar.zst
+*.deb
+*.rpm
