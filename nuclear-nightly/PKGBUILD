@@ -1,0 +1,31 @@
+# Maintainer: Youssef Wadie <youssefwadie14@gmail.com>
+_name=nuclear-player
+_channel=nightly
+pkgname=${_name}-${_channel}
+pkgver=2022.01.31
+pkgrel=1
+pkgdesc='A free, multiplatform music player app that streams from multiple sources - Nightly build'
+arch=('x86_64')
+url='https://nuclear.js.org/'
+license=('AGPL')
+depends=('libnotify' 'libappindicator-gtk3' 'libxtst' 'nss')
+source=("https://github.com/nukeop/nuclear/releases/download/${_channel}/nuclear-${_channel}.deb"
+	'nuclear.desktop')
+conflicts=("${_name}-bin" "${_name}-git")
+sha256sums=('8a3266f945a538f918f4ccd9ad89baf8ede25010ea7f402ea7d8f7093374847b'
+            'SKIP')
+package() {
+	tar xfv data.tar.xz
+	cp -r "${srcdir}/opt" "${pkgdir}/"
+
+
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/nuclear/nuclear" "${pkgdir}/usr/bin/nuclear"
+
+	# mime file
+	install -Dm 644 "${srcdir}/usr/share/mime/packages/nuclear.xml" "${pkgdir}/usr/share/mime/packages/nuclear.xml"    	
+	# icon
+	install -Dm 644 "${srcdir}/usr/share/icons/hicolor/0x0/apps/nuclear.png" "${pkgdir}/usr/share/pixmaps/nuclear.png"
+	# desktop
+	install -Dm 644 "${srcdir}/nuclear.desktop" "${pkgdir}/usr/share/applications/nuclear.desktop"
+}
