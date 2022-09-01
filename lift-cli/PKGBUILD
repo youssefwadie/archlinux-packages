@@ -1,0 +1,19 @@
+# Maintainer: Youssef Wadie <youssefwadie14@gmail.com>
+pkgname=lift-cli
+pkgver=1.0
+pkgrel=1
+pkgdesc='Java libraries and command line utilites for the Algorithms course from Princeton university'
+license=('MIT' 'LGPL2.1' 'Apache' 'MPL2' 'BSD' 'EPL' 'custom')
+arch=('any')
+url='https://lift.cs.princeton.edu'
+depends=('bash' 'jdk-openjdk')
+source=('https://lift.cs.princeton.edu/java/linux/lift-cli.zip')
+sha256sums=('af2506879ee6e9115ff269e333f3f8c9c5858f3e502a404154f775b9b4b41e45')
+
+
+# Merely following the instructions: https://lift.cs.princeton.edu/java/linux/
+package() {
+	mkdir -p "${pkgdir}/usr/local"
+	cp -r "${srcdir}/lift" "${pkgdir}/usr/local"
+	cp -r "${srcdir}/bin" "${pkgdir}/usr/local"
+}
